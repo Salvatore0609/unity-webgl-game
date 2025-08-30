@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/Build/:path*.js.br",
+      "source": "/Build/(.*).js.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/Build/:path*.data.br",
+      "source": "/Build/(.*).data.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -31,11 +31,15 @@
       ]
     },
     {
-      "source": "/Build/:path*.wasm",
+      "source": "/Build/(.*).wasm",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/wasm"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": "identity"
         },
         {
           "key": "Cache-Control",
